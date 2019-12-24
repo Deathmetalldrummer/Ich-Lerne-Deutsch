@@ -1,14 +1,14 @@
 <template lang="pug">
     v-navigation-drawer(absolute temporary v-model="drawer").hidden-md-and-up
-        MainMenu
+        MainMenuDrawer
 </template>
 
 <script>
-    import MainMenu from '@/components/main-menu/main-menu.vue'
+    import MainMenuDrawer from '@/components/main-menu-drawer/main-menu-drawer.vue'
 
     export default {
         name: 'Drawer',
-        components: {MainMenu},
+        components: {MainMenuDrawer},
         data: () => ({
         }),
         computed: {

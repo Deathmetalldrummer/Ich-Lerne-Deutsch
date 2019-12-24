@@ -1,17 +1,17 @@
 <template lang="pug">
-    v-toolbar(color="transparent")
+    v-app-bar(app color="transparent")
         v-app-bar-nav-icon(@click.stop="changeDrawer()").hidden-md-and-up
         v-toolbar-title
             router-link(to="/" tag='span' style="cursor:pointer") Ich Lerne Deutsch
         v-spacer
-        MainMenu(main).hidden-sm-and-down
+        MainMenu.hidden-sm-and-down
 </template>
 
 <script>
     import MainMenu from '@/components/main-menu/main-menu.vue'
 
     export default {
-        name: 'Toolbar',
+        name: 'AppBar',
         components: {MainMenu},
         data() {
             return {
