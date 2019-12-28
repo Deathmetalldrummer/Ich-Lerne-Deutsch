@@ -8,7 +8,7 @@
 </template>
 
 <script>
-    import MainMenu from '@/components/main-menu/main-menu.vue'
+    import MainMenu from '@/components/main-menu.vue'
 
     export default {
         name: 'AppBar',
@@ -26,4 +26,4 @@
     }
 </script>
 
-<style scoped src="./styles.sass" lang="sass"></style>
+<style scoped lang="sass"></style>

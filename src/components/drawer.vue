@@ -4,7 +4,7 @@
 </template>
 
 <script>
-    import MainMenuDrawer from '@/components/main-menu-drawer/main-menu-drawer.vue'
+    import MainMenuDrawer from '@/components/main-menu-drawer.vue'
 
     export default {
         name: 'Drawer',
@@ -20,4 +20,4 @@
     }
 </script>
 
-<style scoped src="./styles.sass" lang="sass"></style>
+<style scoped lang="sass"></style>

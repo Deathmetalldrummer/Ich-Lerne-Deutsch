@@ -7,8 +7,8 @@
 </template>
 
 <script>
-    import Drawer from '@/components/drawer/drawer.vue'
-    import AppBar from '@/components/app-bar/app-bar.vue'
+    import Drawer from '@/components/drawer.vue'
+    import AppBar from '@/components/app-bar.vue'
 
     export default {
         name: 'App',

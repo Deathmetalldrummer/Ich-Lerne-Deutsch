@@ -43,9 +43,8 @@ function generateComponent() {
     for (var i = 3; i < args.length; i++) {
         var arg = args[i];
         var ComponentName = arg.charAt(0).toUpperCase() + arg.substring(1);
-        var _dir = sourceComponent + arg;
+        var _dir = sourceComponent;
         var _file = _dir + "/" + arg + ".vue";
-        var style = _dir + "/" + "styles.sass";
 
         var vue = `<template lang="pug">
     h1 {{message}}
@@ -62,12 +61,9 @@ function generateComponent() {
     }
 </script>
 
-<style scoped src="./styles.sass" lang="sass"></style>`;
-
-        fs.mkdir(_dir, {recursive: true}, cb);
+<style scoped lang="sass"></style>`;
 
         fs.writeFile(_file, vue, cb);
-        fs.writeFile(style, '', cb);
     }
 }
 

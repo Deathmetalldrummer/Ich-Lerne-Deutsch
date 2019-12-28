@@ -14,9 +14,9 @@
             }
         },
         computed: {
-            menuItems(){return this.$store.getters.menu}
+            menuItems(){return this.$store.getters.menu(false)}
         }
     }
 </script>
 
-<style scoped src="./styles.sass" lang="sass"></style>
+<style scoped lang="sass"></style>
