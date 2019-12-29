@@ -17,7 +17,7 @@
 
 <script>
      export default {
-         name: 'Signup',
+        name: 'Signup',
         data() {
             return {
                 email: null,
@@ -28,11 +28,18 @@
          computed: {
              isDisabled(){return this.$store.getters.formProcessing},
              formError(){return this.$store.getters.formError},
+             isAuthenticated(){return this.$store.getters.isAuthenticated}
+         },
+         watch: {
+             isAuthenticated(val) {
+                 if (val !== null || val !== undefined) {
+                     this.$router.push('/')
+                 }
+             }
          },
          methods: {
              signUp(){
-                 console.log(this.email);
-                 console.log(this.password);
+                this.$store.dispatch('signUp', {email: this.email, password: this.password});
              }
          }
         }

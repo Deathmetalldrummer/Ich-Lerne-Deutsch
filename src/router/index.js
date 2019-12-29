@@ -6,6 +6,8 @@ import Signup from '../views/Signup.vue'
 import Signin from '../views/Signin.vue'
 import Words from '../views/Words.vue'
 import Books from '../views/Books.vue'
+import * as firebase from "firebase";
+import store from '../store'
 
 Vue.use(VueRouter)
 
@@ -36,6 +38,11 @@ const routes = [
     component: Signup
   },
   {
+    path: '/signout',
+    name: 'SignOut',
+    beforeEnter: signOut
+  },
+  {
     path: '/',
     name: 'Home',
     component: Home
@@ -57,3 +64,15 @@ const router = new VueRouter({
 })
 
 export default router
+
+function signOut(from, to, next) {
+    firebase.auth().signOut()
+        .then(() => {
+          store.dispatch('signOut');
+          // .then(()=>{next('/signin');});
+          next('/signin');
+        })
+        .catch(function(error) {
+          console.log(error);
+        });
+}

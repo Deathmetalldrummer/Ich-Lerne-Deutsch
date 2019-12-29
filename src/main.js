@@ -15,4 +15,15 @@ new Vue({
   store,
   vuetify,
   render: h => h(App),
+  created: () => {
+    firebase.auth().onAuthStateChanged(
+        user => {
+          if (user) {
+            store.commit('signIn', user.uid);
+          } else if(router.history.current.path !== '/signin') {
+            router.push('/signin');
+          }
+        }
+    );
+  },
 }).$mount('#app');

@@ -17,7 +17,8 @@
             }
         },
         computed: {
-            menuItems(){return this.$store.getters.menu(false)}
+            isAuthenticated(){return this.$store.getters.isAuthenticated},
+            menuItems(){return this.$store.getters.menu(this.isAuthenticated)},
         }
     }
 </script>

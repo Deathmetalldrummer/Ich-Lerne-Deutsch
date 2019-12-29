@@ -12,7 +12,7 @@
                             v-text-field#password(v-model='password' label='Праоль' name='password' prepend-icon='lock' type='password')
                     v-card-actions
                         v-spacer
-                        v-btn(:disabled='isDisabled' color='primary' @click="signIn()") Молви, друг, и войди!
+                        v-btn(:disabled='isDisabled' color='primary' @click="signIn") Молви, друг, и войди!
 </template>
 
 <script>
@@ -28,12 +28,19 @@
          computed: {
              isDisabled(){return this.$store.getters.formProcessing},
              formError(){return this.$store.getters.formError},
+             isAuthenticated(){return this.$store.getters.isAuthenticated}
+         },
+         watch: {
+             isAuthenticated(val) {
+                 if (val !== null || val !== undefined) {
+                     this.$router.push('/')
+                 }
+             }
          },
          methods: {
              signIn(){
-                 console.log(this.email);
-                 console.log(this.password);
-             }
+                 this.$store.dispatch('signIn', {email: this.email, password: this.password});
+            }
          }
         }
 </script>

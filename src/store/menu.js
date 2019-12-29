@@ -19,7 +19,7 @@ export default {
             {
                 icon: 'exit_to_app',
                 title: 'Выйти',
-                route: '/logout'
+                route: '/signout'
             }
         ],
         menu: [
