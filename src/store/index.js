@@ -4,6 +4,7 @@ import menu from './menu.js'
 import processing from './processing.js'
 import user from './user.js'
 import error from './error.js'
+import books from './books.js'
 
 
 Vue.use(Vuex)
@@ -25,6 +26,7 @@ export default new Vuex.Store({
     menu,
     user,
     processing,
-    error
+    error,
+    books
   }
 })
