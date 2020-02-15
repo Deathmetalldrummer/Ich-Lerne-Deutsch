@@ -6,8 +6,10 @@ import Signup from '../views/Signup.vue'
 import Signin from '../views/Signin.vue'
 import Words from '../views/Words.vue'
 import Books from '../views/Books.vue'
+import Book from '../views/Book.vue'
 import * as firebase from "firebase";
 import store from '../store'
+import BookParts from "../views/BookParts";
 
 Vue.use(VueRouter)
 
@@ -16,6 +18,16 @@ const routes = [
     path: '/books',
     name: 'Books',
     component: Books
+  },
+  {
+    path: '/book/:id',
+    name: 'Book',
+    component: Book
+  },
+  {
+    path: '/book/:id/part/:partID',
+    name: 'BookParts',
+    component: BookParts
   },
   {
     path: '/words',

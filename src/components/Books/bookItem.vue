@@ -12,7 +12,8 @@
                 v-rating(v-model='bookItem.rating' half-increments color="yellow" readonly background-color='yellow lighten-2')
                 span {{bookItem.rating}} ({{bookItem.ratingCount}})
                 v-spacer
-                v-btn(color="purple darken-2") Открыть
+                slot
+                //v-btn(color="purple darken-2" :to="{ name: 'Book', params: { id: bookItem.id }}") Открыть
 </template>
 
 <script>
@@ -26,7 +27,7 @@
         },
         computed: {
             bookItem(){return this.item},
-            level(){return this.bookItem.level.join('/')}
+            level(){console.log(this.bookItem.level);return this.bookItem.level.join('/')}
         }
     }
 </script>

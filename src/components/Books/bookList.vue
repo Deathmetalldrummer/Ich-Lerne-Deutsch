@@ -5,6 +5,7 @@
                 BookSearch
             v-col(cols='8' offset=2 v-for="i in bookList" :key="i.id")
                 BookItem(:item="i")
+                    v-btn(color="purple darken-2" :to="{ name: 'Book', params: { id: i.id }}") Открыть
 </template>
 
 <script>
